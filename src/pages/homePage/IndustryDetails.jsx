@@ -5,9 +5,9 @@ export default function IndustryDetails() {
 
   return (
     <div className="p-10">
-      <h2 className="text-3xl font-bold capitalize mb-4">{id.replace("-", " ")}</h2>
+      <h2 className="mb-4 font-bold text-3xl capitalize">{id.replace("-", " ")}</h2>
       <p className="text-gray-700">
-        This page will contain detailed information about Symence's work in the "{id}" domain.
+        This page will contain detailed information about Symence IT's work in the "{id}" domain.
         You can include case studies, images, solutions, and project highlights here.
       </p>
     </div>

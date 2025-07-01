@@ -5,7 +5,10 @@ import GlowingNetwork from './GlowingNetwork'
 import Services from './Services'
 import IndustrySolutions from './IndustrySolutions'
 import About from './About'
-import OurServices from './OurServices'
+import OurServices from '../servicesPage/OurServices'
+import Testimonial from './Testimonial'
+import Collaborate from '../../components/Collaborate'
+import TechnologiesWeUse from './TechnologiesWeUse'
 
 const HomePage = () => {
   return (
@@ -16,7 +19,11 @@ const HomePage = () => {
       <GlowingNetwork />
       <OurServices />
       {/* <Services /> */}
-      <IndustrySolutions />
+      {/* <IndustrySolutions /> */}
+
+      <TechnologiesWeUse />
+      <Testimonial />
+      <Collaborate />
     </div>
   );
 }

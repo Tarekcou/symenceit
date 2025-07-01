@@ -18,7 +18,7 @@ const slides = [
   {
     image: hero3,
     heading: "Innovation at Every Pixel",
-    subheading: "Symence blends AI & design for digital success.",
+    subheading: "Symence IT blends AI & design for digital success.",
   },
 ];
 

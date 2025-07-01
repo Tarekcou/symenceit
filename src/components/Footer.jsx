@@ -1,22 +1,32 @@
 import React from 'react'
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="bg-base-300 p-10 text-base-content footer sm:footer-horizontal">
+    <div className="bg-amber-50">
+      <footer className="mx-auto p-10 w-10/12 text-base-content footer sm:footer-horizontal">
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <h6 className="footer-title">Web Development</h6>
+          <a className="link link-hover">Mobile App Development</a>
+          <a className="link link-hover">IT Consulting</a>
+          <a className="link link-hover">E Commerce Solution</a>
+
+          <a className="link link-hover">IT Support</a>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to={"/"} className="link link-hover">
+            Home
+          </Link>
+          <Link to={"/services"} className="link link-hover">
+            Services{" "}
+          </Link>
+          <Link to={"/contact-us"} className="link link-hover">
+            Contact
+          </Link>
+          <Link to={"/products"} className="link link-hover">
+            Product
+          </Link>
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>
@@ -57,11 +67,11 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <footer className="bg-base-300 p-4 text-base-content footer sm:footer-horizontal footer-center">
+      <footer className="bg-amber-50 p-4 text-base-content footer sm:footer-horizontal footer-center">
         <aside>
           <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by ACME
-            Industries Ltd
+            Copyright © {new Date().getFullYear()} - All right reserved Symence
+            IT
           </p>
         </aside>
       </footer>
