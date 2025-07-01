@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 export default function MainLayout() {
   return (
-    <div  className="relative">
+    <div  className="relative min-h-screen overflow-auto ">
       <div className="top-0 z-50 fixed shadow w-full">
         <Navbar />
       </div>

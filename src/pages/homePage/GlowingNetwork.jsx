@@ -1,121 +1,39 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import "./GlowingNetwork.css"; // For animation styles
 
-const items = [
-  { title: "Artificial Intelligence", xPercent: 15, yPercent: 20 },
-  { title: "Data Sciences", xPercent: 15, yPercent: 75 },
-  { title: "Cloud Services", xPercent: 75, yPercent: 20 },
-  { title: "Engineering", xPercent: 75, yPercent: 75 },
-];
-
-export default function GlowingNetwork() {
-  const [active, setActive] = useState(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const updateSize = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-
-  const center = {
-    x: dimensions.width / 2,
-    y: dimensions.height / 2,
-  };
-
+const GlowingNetwork = () => {
   return (
-    <div className="relative flex justify-center items-center mx-auto w-11/12 h-screen overflow-hidden">
-      {/* Center Logo */}
-      <div className="top-1/2 left-1/2 z-10 absolute flex justify-center items-center bg-gradient-to-br from-gray-800 to-black shadow-xl ml-12 rounded-xl w-24 h-24 -translate-x-1/2 -translate-y-1/2">
-        <img src="/logo.svg" alt="Logo" className="w-10 h-10" />
+    <div className="relative flex items-center justify-center w-10/12 h-[500px] mx-auto bg-base-200 overflow-hidden">
+      {/* Center Company Name */}
+      <div className="absolute z-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-2xl font-bold py-8 px-16 rounded-full shadow-lg">
+        Symence
       </div>
 
-      {/* Glowing Boxes */}
-      {items.map((item, index) => {
-        const x = (item.xPercent / 100) * dimensions.width;
-        const y = (item.yPercent / 100) * dimensions.height;
+      {/* Top Box */}
+      <div className="absolute top-8 flex flex-col items-center">
+        <div className="box glow">Web Development</div>
+        <div className="line line-down" />
+      </div>
 
-        return (
-          <button
-            key={index}
-            onClick={() => setActive(item.title)}
-            className="absolute bg-black bg-opacity-60 shadow-md hover:shadow-purple-500/40 backdrop-blur-md px-6 py-3 border border-purple-500 rounded-lg focus:outline-none font-medium text-white text-sm md:text-lg hover:scale-105 transition-transform duration-300"
-            style={{ left: x, top: y, transform: "translate(-50%, -50%)" }}
-          >
-            {item.title}
-          </button>
-        );
-      })}
+      {/* Bottom Box */}
+      <div className="absolute bottom-8 flex flex-col items-center">
+        <div className="line line-up" />
+        <div className="box glow">E-commerce Solution</div>
+      </div>
 
-      {/* SVG Curved Lines */}
-      <svg className="top-0 left-0 z-0 absolute w-full h-full pointer-events-none">
-        <defs>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <style>{`
-            .draw-path {
-              stroke-dasharray: 1000;
-              stroke-dashoffset: 1000;
-              animation: dash 2s ease forwards;
-            }
-            @keyframes dash {
-              to {
-                stroke-dashoffset: 0;
-              }
-            }
-          `}</style>
-        </defs>
+      {/* Left Box */}
+      <div className="absolute left-8 flex items-center">
+        <div className="box glow">Mobile App Development</div>
+        <div className="line line-right" />
+      </div>
 
-        {items.map((item, index) => {
-          const x = (item.xPercent / 100) * dimensions.width;
-          const y = (item.yPercent / 100) * dimensions.height;
-
-          const dx = x - center.x;
-          const dy = y - center.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          const shorten = 60;
-          if (distance === 0) return null;
-          const ratio = (distance - shorten) / distance;
-
-          const targetX = center.x + dx * ratio;
-          const targetY = center.y + dy * ratio;
-
-          const controlX1 = center.x + dx * 0.3;
-          const controlY1 = center.y;
-          const controlX2 = center.x + dx * 0.7;
-          const controlY2 = y;
-
-          return (
-            <path
-              key={index}
-              d={`M ${center.x} ${center.y} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${targetX} ${targetY}`}
-              stroke="#a855f7"
-              strokeWidth="2"
-              fill="none"
-              filter="url(#glow)"
-              className="draw-path"
-            />
-          );
-        })}
-      </svg>
-
-      {/* Active Info Display */}
-      {active && (
-        <div className="bottom-4 absolute text-purple-400 text-sm md:text-base animate-pulse">
-          You clicked: <strong>{active}</strong>
-        </div>
-      )}
+      {/* Right Box */}
+      <div className="absolute right-8 flex items-center">
+        <div className="line line-left" />
+        <div className="box glow">Data Science</div>
+      </div>
     </div>
   );
-}
+};
+
+export default GlowingNetwork;

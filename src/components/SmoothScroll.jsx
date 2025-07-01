@@ -8,17 +8,21 @@ export default function SmoothScroll({ children }) {
   const location = useLocation();
   const scrollRef = useRef(null);
 
-  useEffect(() => {
+ useEffect(() => {
+  const timeout = setTimeout(() => {
     scrollRef.current = new LocomotiveScroll({
       el: containerRef.current,
       smooth: true,
       lerp: 0.08,
     });
+  }, 100); // Delay to ensure DOM is ready
 
-    return () => {
-      if (scrollRef.current) scrollRef.current.destroy();
-    };
-  }, []);
+  return () => {
+    clearTimeout(timeout);
+    if (scrollRef.current) scrollRef.current.destroy();
+  };
+}, []);
+
 
   useEffect(() => {
     if (scrollRef.current) {

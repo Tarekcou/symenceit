@@ -39,6 +39,9 @@ const Hero = () => {
     <div className="relative w-full h-screen overflow-hidden">
       <img
         src={image}
+  //       onLoad={() => {
+  //   if (scrollRef.current) scrollRef.current.update();
+  // }}
         alt={`Slide ${current + 1}`}
         className="w-full h-full object-cover transition-all duration-700"
         loading="lazy"

@@ -2,6 +2,7 @@
 // App.jsx
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import IndustryDetails from './pages/homePage/IndustryDetails';
 
 const MainLayout = lazy(() => import('./mainLayout/MainLayout'));
 const HomePage = lazy(() => import('./pages/homePage/HomePage'));
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="services" element={<ServicePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="/sectors/:id" element={<IndustryDetails />} />
         </Route>
       </Routes>
     </Suspense>

@@ -1,0 +1,71 @@
+.box {
+  background-color: #1e293b;
+  color: white;
+  padding: 20px 60px;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+}
+
+.glow {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+.line {
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(to bottom, #6d28d9, #a78bfa);
+  animation: glowFlow 2s linear infinite;
+}
+
+.line-up {
+  transform: rotate(180deg);
+}
+
+.line-right {
+  width: 400px;
+  height: 2px;
+  background: linear-gradient(to right, #6d28d9, #a78bfa);
+  animation: glowFlowHorizontal 2s linear infinite;
+}
+
+.line-left {
+  width: 400px;
+  height: 2px;
+  background: linear-gradient(to left, #6d28d9, #a78bfa);
+  animation: glowFlowHorizontal 2s linear infinite reverse;
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 10px #a78bfa;
+  }
+  to {
+    box-shadow: 0 0 20px #a78bfa, 0 0 30px #c084fc;
+  }
+}
+
+@keyframes glowFlow {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes glowFlowHorizontal {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
