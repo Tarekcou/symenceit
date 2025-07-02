@@ -58,13 +58,11 @@ export default function OurServices() {
     <section className="bg-[#e6f6f5] px-6 md:px-20 py-16">
       <div className="mb-10 text-center">
         <h2 className="mb-4 font-semibold text-4xl">
-          Industry-Standard Tailored Solutions
+          Empowering Innovation with Custom Web & AI Solutions
+
         </h2>
         <p className="mx-auto max-w-2xl text-gray-600 text-lg">
-          At <strong>Symence IT</strong>, we specialize in web and AI solutions
-          tailored to meet unique business needs. Our expert team combines deep
-          industry knowledge with modern technology to deliver scalable,
-          efficient, and innovative results.
+          At <strong>Symence IT</strong>, we craft cutting-edge web and AI solutions tailored to your business goals. By blending industry expertise with modern technologies, our team delivers scalable, intelligent, and future-ready digital products that drive real impact.
         </p>
       </div>
 
@@ -77,11 +75,11 @@ export default function OurServices() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05, duration: 0.4 }}
             viewport={{ once: true }}
-            onClick={() => navigate(service.path)}
+            // onClick={() => navigate(service.path)}
             className="bg-white hover:bg-purple-50 shadow-md p-6 rounded-xl text-center cursor-pointer"
           >
             <div className="flex justify-center items-center w-full text-center">
-              <h1 className="text-blue-500 text-3xl">{service.icon}</h1>
+              <h1 className="text-blue-500 text-5xl">{service.icon}</h1>
             </div>
 
             <h3 className="font-semibold text-lg">{service.title}</h3>

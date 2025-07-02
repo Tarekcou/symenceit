@@ -45,10 +45,11 @@ export default function IndustrySolutions() {
       <section className="flex md:flex-row flex-col justify-between items-center gap-12 bg-[#fdf4ef] px-6 md:px-20 py-16">
         <div className="flex-1 max-w-xl">
           <h2 className="mb-4 font-semibold text-4xl md:text-5xl">
-            Smart Tech Solutions by Symence IT
+            Empowering Innovation with Custom Web & AI Solutions
+
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            At <strong>Symence IT</strong>, we develop modern web platforms and intelligent applications that solve real-world challenges. From AI-powered systems to secure, scalable software, our mission is to deliver tailored digital experiences that empower businesses in every industry.
+            At <strong className="text-purple-500">Symence IT</strong>,  we craft cutting-edge web and AI solutions tailored to your business goals. By blending industry expertise with modern technologies, our team delivers scalable, intelligent, and future-ready digital products that drive real impact.
           </p>
         </div>
         <div className="flex-1">

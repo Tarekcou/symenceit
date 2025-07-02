@@ -4,6 +4,7 @@ import hero1 from "../../assets/hero-1.jpg";
 import hero2 from "../../assets/hero-2.jpg";
 import hero3 from "../../assets/hero-3.jpg";
 import hero4 from "../../assets/hero-4.jpg";
+import { Link } from "react-router-dom"; 
 const slides = [
   {
     image: hero1,
@@ -24,6 +25,17 @@ const slides = [
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(false); // reset on slide change
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,30 +59,23 @@ const Hero = () => {
         loading="lazy"
       />
 
-      {/* Overlay with Typing + Animated Text */}
+      {/* Overlay */}
       <div className="absolute inset-0 flex justify-center items-center bg-black/50 px-4 text-white">
         <div
-          key={current} // Ensures re-animation on slide change
+          key={current}
           className="left-0 space-y-4 w-full max-w-5xl text-start animate-fade-in-up"
         >
-          <h1 className="font-bold text-4xl md:text-6xl leading-tight">
-            {heading}
-            {/* <Typewriter
-              words={[heading]}
-              loop={false}
-              typeSpeed={80}
-              deleteSpeed={20}
-              cursor
-            /> */}
-          </h1>
-          <p className="opacity-90 text-lg md:text-xl transition duration-500">
-            {subheading}
-          </p>
-          <button className="mt-4 text-white btn btn-primary">
-            Let’s Build Together
-          </button>
+          <h1 className="font-bold text-4xl md:text-6xl leading-tight">{heading}</h1>
+          <p className="opacity-90 text-lg md:text-xl transition duration-500">{subheading}</p>
+          <div className="!cursor-pointer">
+            <Link onClick={()=>console.log("sfdd")} to="/contact-us" className="mt-4 !cursor-pointer text-white btn btn-primary">
+              Let’s Build Together
+            </Link>
+          </div>
         </div>
       </div>
+
+     
 
       {/* Navigation Controls */}
       <div className="absolute inset-0 flex justify-between items-center px-4">

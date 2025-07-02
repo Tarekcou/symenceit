@@ -1,12 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router';
-
+import logo from "../assets/logo.png"
 const Footer = () => {
   return (
     <div className="bg-amber-50">
       <footer className="mx-auto p-10 w-10/12 text-base-content footer sm:footer-horizontal">
+
+      <div className='flex flex-col justify-center items-center'>
+        <img className="w-8 h-8 rounded-sm" src={logo} alt="Symence Logo" />
+        <h1 className='text-2xl font-bold'>Symence IT</h1>
+      </div>
         <nav>
-          <h6 className="footer-title">Web Development</h6>
+          <h6 className="footer-title">Services</h6>
+          <a className="link link-hover">Web Development</a>
           <a className="link link-hover">Mobile App Development</a>
           <a className="link link-hover">IT Consulting</a>
           <a className="link link-hover">E Commerce Solution</a>
@@ -21,12 +27,13 @@ const Footer = () => {
           <Link to={"/services"} className="link link-hover">
             Services{" "}
           </Link>
-          <Link to={"/contact-us"} className="link link-hover">
-            Contact
-          </Link>
           <Link to={"/products"} className="link link-hover">
             Product
           </Link>
+          <Link to={"/contact-us"} className="link link-hover">
+            Contact
+          </Link>
+          
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>

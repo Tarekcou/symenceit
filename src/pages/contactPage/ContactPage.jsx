@@ -2,10 +2,11 @@ import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import emailLottie from "../../assets/emaillotties.json"
           import { Player } from "@lottiefiles/react-lottie-player";
+import About from "../homePage/About";
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-col items-center bg-amber-50 px-4 py-12 pt-20 min-h-screen">
+    <div className="flex flex-col items-center my-10 px-4 py-12 pt-20 min-h-screen">
       {/* Heading Section */}
       <div className="mb-10 text-center">
         <h1 className="font-bold text-gray-800 text-4xl md:text-5xl">
@@ -17,6 +18,12 @@ const ContactPage = () => {
           possibilities into achievements.{" "}
         </p>
       </div>
+
+    {/* About Page */}
+    <div>
+      <About />   
+
+    </div>
 
       {/* Form & Animation */}
       <div className="flex md:flex-row flex-col-reverse items-center gap-10 w-full max-w-6xl">

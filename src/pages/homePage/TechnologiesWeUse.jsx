@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
+import { Tab } from "@headlessui/react";
 
 const techCategories = {
   Languages: [
@@ -10,13 +11,11 @@ const techCategories = {
     { name: "PHP", icon: "💠" },
     { name: "Swift", icon: "🕊️" },
     { name: "Java", icon: "☕" },
-
     { name: "Go", icon: "🐹" },
   ],
   Frontend: [
     { name: "React", icon: "⚛️" },
     { name: "Next.js", icon: "⏭️" },
-
     { name: "Vue.js", icon: "🟢" },
     { name: "Tailwind CSS", icon: "🌬️" },
   ],
@@ -31,13 +30,6 @@ const techCategories = {
     { name: "Adobe XD", icon: "🅧" },
     { name: "Sketch", icon: "✏️" },
   ],
-  // "DevOps/Server": [
-  //   { name: "Docker", icon: "🐳" },
-  //   { name: "Kubernetes", icon: "☸️" },
-  //   { name: "AWS", icon: "☁️" },
-  //   { name: "Nginx", icon: "🌀" },
-  //   { name: "GitLab CI/CD", icon: "🛠️" },
-  // ],
   Services: [
     { name: "Firebase", icon: "🔥" },
     { name: "Stripe", icon: "💳" },
@@ -58,8 +50,6 @@ const techCategories = {
 };
 
 export default function TechnologiesWeUse() {
-  const [activeTab, setActiveTab] = useState("Languages");
-
   return (
     <div className="bg-white mx-auto px-6 py-12 max-w-7xl">
       <h2 className="mb-4 font-bold text-gray-900 text-3xl text-center">
@@ -70,35 +60,47 @@ export default function TechnologiesWeUse() {
         high-quality software solutions for your business.
       </p>
 
-      {/* Tabs */}
-      <div className="flex flex-wrap justify-center space-x-10 mb-10 border-b-1">
-        {Object.keys(techCategories).map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveTab(category)}
-            className={`pb-1   cursor-pointer  font-medium ${
-              activeTab === category
-                ? "border-orange-500 text-orange-600"
-                : "border-transparent text-gray-600 hover:text-gray-800"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+      {/* Headless UI Tabs */}
+      <Tab.Group>
+        <Tab.List className="flex flex-wrap justify-center gap-3 mb-10">
+          {Object.keys(techCategories).map((category) => (
+            <Tab key={category} as={Fragment}>
+              {({ selected }) => (
+                <button
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all
+                    ${
+                      selected
+                        ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg"
+                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                    }`}
+                >
+                  {category}
+                </button>
+              )}
+            </Tab>
+          ))}
+        </Tab.List>
 
-      {/* Grid of Tech Items */}
-      <div className="gap-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mx-auto w-10/12">
-        {techCategories[activeTab].map((tech, index) => (
-          <div
-            key={index}
-            className="bg-gray-50 hover:shadow-md p-6 rounded-lg text-center transition"
-          >
-            <div className="mb-4 text-4xl">{tech.icon}</div>
-            <p className="font-medium text-gray-800 text-sm">{tech.name}</p>
-          </div>
-        ))}
-      </div>
+        <Tab.Panels>
+          {Object.values(techCategories).map((techList, idx) => (
+            <Tab.Panel key={idx}>
+              <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mx-auto w-10/12">
+                {techList.map((tech, i) => (
+                  <div
+                    key={i}
+                    className="bg-gray-50 shadow-sm hover:shadow-md p-6 rounded-lg text-center transition"
+                  >
+                    <div className="mb-4 text-5xl">{tech.icon}</div>
+                    <p className="font-medium text-gray-800 text-sm">
+                      {tech.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+      </Tab.Group>
     </div>
   );
 }

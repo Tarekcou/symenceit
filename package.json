@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.48",
+    "@headlessui/react": "^2.2.4",
     "@lottiefiles/dotlottie-react": "^0.14.2",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@tailwindcss/vite": "^4.1.11",

@@ -15,7 +15,7 @@ const Collaborate = () => {
       </h2>
       <button
         onClick={handleClick}
-        className="bg-orange-400 hover:bg-orange-500 shadow-md px-8 py-3 rounded-xl font-semibold text-white text-lg transition-all duration-300"
+        className="bg-orange-400 btn hover:bg-orange-500 shadow-md px-8 py-3 rounded-xl font-semibold text-white text-lg transition-all duration-300"
       >
         Let's Collaborate!
       </button>

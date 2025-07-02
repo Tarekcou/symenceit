@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
-
+import logo from "../assets/logo.png"
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -28,7 +28,7 @@ const Navbar = () => {
         About
       </NavLink> */}
       <NavLink to="/contact-us" className="hover:underline underline-offset-8">
-        Contact
+        Let's Talk
       </NavLink>
     </div>
   );
@@ -71,7 +71,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <a className="text-2xl btn btn-ghost">Symence IT</a>
+          <a className="text-2xl btn btn-ghost"><img className="w-8 h-8 rounded-sm" src={logo} alt="Symence Logo" />Symence IT</a>
         </div>
         <div className="hidden lg:flex navbar-end">
           <ul className="px-1 menu menu-horizontal">{menuList}</ul>

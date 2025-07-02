@@ -17,18 +17,20 @@ const services = [
     position: "top",
     Icon: ArrowBigDown,
   },
+  
   {
     label: "E-commerce Solution",
     path: "ecommerce-solution",
-    position: "bottom",
+    position: "left",
     Icon: ArrowBigUp,
   },
   {
     label: "Mobile App Development",
     path: "mobile-app-development",
-    position: "left",
+    position: "bottom",
     Icon: ArrowBigRight,
   },
+  
   {
     label: "Data Science",
     path: "data-science",
@@ -68,13 +70,14 @@ const GlowingNetwork = () => {
         {services.map((service, idx) => {
           const commonClasses = "absolute flex flex-col items-center gap-2";
           const positionStyles =
-            service.position === "top"
-              ? "md:top-6 md:left-1/2 md:-translate-x-1/2 top-4 left-1/2 -translate-x-1/2"
-              : service.position === "bottom"
-              ? "md:bottom-6 md:left-1/2 md:-translate-x-1/2 bottom-4 left-1/2 -translate-x-1/2"
-              : service.position === "left"
-              ? "md:left-36 md:top-1/2 md:-translate-y-1/2 top-24 left-1/2 -translate-x-1/2"
-              : "md:right-6 md:top-1/2 md:-translate-y-1/2 md:top-24 bottom-24 right-1/2 left-1/2 -translate-x-1/2";
+      service.position === "top"
+    ? "md:top-6 md:left-1/2 md:-translate-x-1/2 top-4 left-1/2 -translate-x-1/2"
+    : service.position === "bottom"
+    ? "md:bottom-6 md:left-1/2 md:-translate-x-1/2 bottom-4 left-1/2 -translate-x-1/2"
+    : service.position === "left"
+    ? "left-1/5 top-1/2 -rotate-90 left-0 "
+    : " bottom-1/2 top-1/2 rotate-90 right-1/5 ";
+
 
 
           const Icon = service.Icon;
