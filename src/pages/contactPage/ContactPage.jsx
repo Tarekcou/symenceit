@@ -29,9 +29,9 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center my-10 px-4 py-12 pt-20 min-h-screen">
+    <div className="flex flex-col items-center py-10   min-h-screen">
       {/* Heading */}
-      <div className="mb-10 text-center">
+      <div className=" bg-amber-50 text-center w-full py-20" >
         <h1 className="font-bold text-gray-800 text-4xl md:text-5xl">
           Connect, Collaborate, Create
         </h1>
