@@ -32,7 +32,7 @@ const services = [
   },
   
   {
-    label: "Data Science",
+    label: "AI & Data Science",
     path: "data-science",
     position: "right",
     Icon: ArrowBigLeft,
@@ -75,8 +75,8 @@ const GlowingNetwork = () => {
     : service.position === "bottom"
     ? "md:bottom-6 md:left-1/2 md:-translate-x-1/2 bottom-4 left-1/2 -translate-x-1/2"
     : service.position === "left"
-    ? "left-1/6 top-1/2 -rotate-90 "
-    : " bottom-1/2 top-1/2 rotate-90 right-1/6 ";
+    ? "md:left-1/6 -left-10 top-1/2 -rotate-90 "
+    : " bottom-1/2 top-1/2 rotate-90 -right-10 md:right-1/6 ";
 
 
 
@@ -91,7 +91,7 @@ const GlowingNetwork = () => {
               className={`${commonClasses} ${positionStyles} z-10`}
             >
               <Link
-                to={`/service/${service.path}`}
+                // to={`/service/${service.path}`}
                 className="bg-slate-800 shadow-lg px-6 sm:px-8 py-3 rounded-full font-semibold text-white text-sm sm:text-base text-center whitespace-nowrap hover:scale-105 transition-transform duration-300"
               >
                 {service.label}
