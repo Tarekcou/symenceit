@@ -22,8 +22,8 @@ const items = [
 
 export default function ServiceGrid() {
   return (
-    <div className="bg-amber-50 mx-auto w-full pt-16">
-      <div className="space-y-3 mx-auto  w-9/12 text-left">
+    <div className="bg-amber-50 mx-auto pt-16 w-full">
+      <div className="space-y-3 mx-auto mb-4 w-9/12 text-left">
         <h1 className="font-bold text-2xl">Services you can get</h1>
       <p className="text-gray-700">
         We offer a wide range of services to meet your needs. From software

@@ -7,7 +7,7 @@ const Stats = () => {
         <div className="stat">
           <div className="stat-title">Experience</div>
           <div className="text-2xl md:text-3xl stat-value">5 years +</div>
-          <div className="stat-desc">Jan 2020 - Present</div>
+          <div className="stat-desc">Jan 2021 - Present</div>
         </div>
 
         <div className="stat">

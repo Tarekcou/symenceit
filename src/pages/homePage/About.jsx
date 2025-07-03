@@ -6,6 +6,7 @@ import { BsShieldCheck, BsTools } from "react-icons/bs";
 import office1 from "../../assets/office1.jpg";
 import office2 from "../../assets/office2.jpg";
 import office3 from "../../assets/office3.jpg";
+import { Link } from "react-router";
 
 const About = () => {
   const [showModal, setShowModal] = useState(false);
@@ -68,9 +69,9 @@ const About = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <button className="bg-purple-600 hover:bg-purple-700 shadow-lg px-6 py-3 rounded-full text-white transition duration-300">
+          <Link to={"/contact-us"} className="bg-purple-600 hover:bg-purple-700 shadow-lg px-6 py-3 rounded-full text-white transition duration-300 btn">
             Contact Us!
-          </button>
+          </Link>
           <div className="flex items-center gap-3">
             <div className="flex justify-center items-center bg-purple-100 rounded-full w-10 h-10 text-purple-700 text-lg">
               <FaPhoneAlt />

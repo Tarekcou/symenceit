@@ -75,8 +75,8 @@ const GlowingNetwork = () => {
     : service.position === "bottom"
     ? "md:bottom-6 md:left-1/2 md:-translate-x-1/2 bottom-4 left-1/2 -translate-x-1/2"
     : service.position === "left"
-    ? "left-1/5 top-1/2 -rotate-90 left-0 "
-    : " bottom-1/2 top-1/2 rotate-90 right-1/5 ";
+    ? "left-1/6 top-1/2 -rotate-90 "
+    : " bottom-1/2 top-1/2 rotate-90 right-1/6 ";
 
 
 

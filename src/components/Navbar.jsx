@@ -71,7 +71,12 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <a className="text-2xl btn btn-ghost"><img className="w-8 h-8 rounded-sm" src={logo} alt="Symence Logo" />Symence IT</a>
+          <a className="flex justify-center items-center gap-2 text-2xl btn btn-ghost">
+            <img className="rounded-sm w-8 h-8" src={logo} alt="Symence Logo" />
+            <p className="font-bold tracking-tight">
+              S<span className="text-purple-600 text-3xl">y</span>mence IT
+            </p>
+          </a>
         </div>
         <div className="hidden lg:flex navbar-end">
           <ul className="px-1 menu menu-horizontal">{menuList}</ul>
