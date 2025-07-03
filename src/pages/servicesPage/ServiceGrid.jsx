@@ -22,8 +22,8 @@ const items = [
 
 export default function ServiceGrid() {
   return (
-    <div className="bg-amber-50 mx-auto pt-16 w-full">
-      <div className="space-y-3 mx-auto mb-4 w-9/12 text-left">
+    <div className=" mx-auto  w-full">
+      <div className=" bg-amber-50 py-16 space-y-3 mx-auto mb-4 w-full text-center">
         <h1 className="font-bold text-2xl">Services you can get</h1>
       <p className="text-gray-700">
         We offer a wide range of services to meet your needs. From software
@@ -31,7 +31,7 @@ export default function ServiceGrid() {
         </p>
       </div>
       
-      <div className="flex justify-center items-center mx-auto -mt-16 p-6 w-11/12 md:w-10/12 min-h-screen">
+      <div className="flex justify-center items-center mx-auto -my-16 p-6 w-11/12 md:w-10/12 min-h-screen">
         <div className="gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
           {items.map((item, index) => (
             <div

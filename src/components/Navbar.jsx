@@ -34,15 +34,15 @@ const Navbar = () => {
   );
 
   return (
-    <div
-      className={`navbar  fixed top-0 left-0 z-50 transition-all duration-300  ${
-        location.pathname === "/"
-          ? scrolled
-            ? "bg-amber-50 shadow text-black"
-            : "bg-transparent text-black md:text-white"
-          : "bg-amber-50 shadow text-black"
-      }`}
-    >
+   <div
+  className={`navbar fixed top-0 left-0 z-50 transition-all duration-300 ${
+    location.pathname === "/"
+      ? scrolled
+        ? "bg-amber-50 shadow text-black font-bold"
+        : "bg-transparent text-white font-bold"
+      : "bg-amber-50 shadow text-black font-bold"
+  }`}
+>
       <div className="flex mx-auto w-11/12 md:w-10/12">
         <div className="navbar-start">
           <div className="dropdown">
@@ -73,9 +73,9 @@ const Navbar = () => {
 
           <a className="flex justify-center items-center gap-2 text-2xl btn btn-ghost">
             <img className="rounded-sm w-8 h-8" src={logo} alt="Symence Logo" />
-            <p className="font-bold tracking-tight">
+            <Link to={"/"} className="font-bold tracking-tight">
               S<span className="text-purple-600 text-3xl">y</span>mence IT
-            </p>
+            </Link>
           </a>
         </div>
         <div className="hidden lg:flex navbar-end">

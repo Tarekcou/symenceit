@@ -67,10 +67,10 @@ export default function TechnologiesWeUse() {
             <Tab key={category} as={Fragment}>
               {({ selected }) => (
                 <button
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all
+                  className={`px-5 py-2 btn rounded-full text-sm font-medium transition-all
                     ${
                       selected
-                        ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg"
+                        ? "bg-gradient-to-r from-indigo-500 to-purple-600 border-none text-white shadow-lg"
                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                     }`}
                 >

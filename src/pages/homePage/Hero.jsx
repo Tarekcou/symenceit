@@ -5,6 +5,10 @@ import hero2 from "../../assets/hero-2.jpg";
 import hero3 from "../../assets/hero-3.jpg";
 import hero4 from "../../assets/hero-4.jpg";
 import { Link } from "react-router-dom"; 
+
+import arrowLottie from "../../assets/arrowLottie.json"
+import Lotties from "../../components/Lotties";
+import { Player } from "@lottiefiles/react-lottie-player";
 const slides = [
   {
     image: hero1,
@@ -37,13 +41,6 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 8000); // 5 sec slide change
-
-    return () => clearInterval(timer);
-  }, []);
 
   const { image, heading, subheading } = slides[current];
 
@@ -56,8 +53,9 @@ const Hero = () => {
         loading="lazy"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 flex justify-center items-center bg-black/50 px-4 text-white">
+      {/* Overlay */} 
+{/* Overlay */}
+<div className="absolute inset-0 z-40 flex justify-center items-center w-full h-full bg-black/60 px-4 text-white">
         <div
           key={current}
           className="left-0 space-y-4 w-full max-w-5xl text-start animate-fade-in-up"
@@ -68,19 +66,14 @@ const Hero = () => {
           <p className="opacity-90 text-lg md:text-xl transition duration-500">
             {subheading}
           </p>
-          <div className="z-60 w-24">
-            
-            <Link
-              to={"/contact-us"}
-              className="bottom-1/4 left-1/10 z-50 absolute bg-purple-600 hover:bg-purple-700 shadow-lg px-6 py-3 border-none rounded-lg text-white transition duration-300 btn"
-            >
-              Let’s Build Together
-            </Link>
-          </div>
+
+
+
+
           <div>
             {/* <div className="badge badge-soft badge-info"></div> */}
 
-            <p className="opacity-80 p-4 md:text-md text-xl badge badge-soft badge-info">
+            <p className="opacity-90 p-4 md:text-md text-xl badge badge-soft badge-info">
               <Typewriter
                 words={[
                   "Website Development",
@@ -96,11 +89,33 @@ const Hero = () => {
               />
             </p>
           </div>
+          <div className="z-60 w-24">
+            
+            <Link
+              to={"/contact-us"}
+              className="absolute bg-purple-600 hover:bg-purple-700 shadow-lg px-6 py-3 border-none rounded-lg text-white transition duration-300 btn"
+            >
+              Let’s Build Together
+            </Link>
+          </div>
+          
         </div>
       </div>
 
+      <div className="absolute  !bottom-1 0 w-full  z-50">
+                   <Player
+                              autoplay
+                              loop
+                              src={arrowLottie}
+                              style={{ height: "120px", width: "100%" }}
+                            />
+
+      </div>
+
+
+
       {/* Navigation Controls */}
-      <div className="absolute inset-0 flex justify-between items-center px-4">
+      <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 z-50 flex justify-between items-center px-4">
         <button
           onClick={() =>
             setCurrent((current - 1 + slides.length) % slides.length)

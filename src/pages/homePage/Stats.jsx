@@ -2,7 +2,7 @@ import React from 'react'
 
 const Stats = () => {
   return (
-    <div className="shadow mx-auto overflow-scroll">
+    <div className="shadow mx-auto ">
       <div className="flex mx-auto w-11/12 text-center">
         <div className="stat">
           <div className="stat-title">Experience</div>

@@ -4,7 +4,7 @@
 
 
 a.active{
-  @apply text-blue-500 hover:text-blue-700 underline hover:underline underline-offset-8 hover:underline-offset-8;
+  @apply text-purple-500 hover:text-purple-600 underline hover:underline underline-offset-8 hover:underline-offset-8;
 }
 
 

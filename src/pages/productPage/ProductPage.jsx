@@ -13,7 +13,7 @@ import bari from "../../assets/bari.png";
 import tutorly from "../../assets/tutorly.png";
 const ProductPage = () => {
   return (
-    <div className="flex flex-col items-center bg-amber-50 px-4 py-12 pt-20 min-h-screen">
+    <div className="flex flex-col items-center bg-amber-50 px-4 py-12 pt-36 min-h-screen">
       {/* Heading Section */}
       <div className="mb-10 w-full text-center">
         <h1 className="font-bold text-gray-800 text-4xl md:text-5xl">

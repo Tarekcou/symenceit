@@ -4,7 +4,8 @@ import HowWeWork from './HowWeWork';
 import Services from '../homePage/Services';
 import Collaborate from '../../components/Collaborate';
 import OurServices from './OurServices';
-
+import { Player } from '@lottiefiles/react-lottie-player';
+import servicesLottie from "../../assets/servicesLottie.json"
 const ServicePage = () => {
   return (
     <div className=' mx-auto  '>
@@ -16,6 +17,14 @@ const ServicePage = () => {
           growth. Our expert team transforms core expertise into scalable,
           impactful results that empower industries to thrive.
         </p>
+
+          <Player
+          className='bg-amber-50'
+          autoplay
+                loop          
+               src={servicesLottie}
+                 style={{ height: "400px", width: "100%" }}
+               />
       </div>
 
       <ServiceGrid />

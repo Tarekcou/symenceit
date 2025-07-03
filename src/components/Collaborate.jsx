@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Collaborate = () => {
   const navigate = useNavigate();
@@ -13,12 +14,15 @@ const Collaborate = () => {
       <h2 className="mb-8 font-semibold text-gray-700 text-3xl md:text-5xl">
         Power your digital <br /> transformation with us
       </h2>
-      <button
-        onClick={handleClick}
-        className="bg-orange-400 btn hover:bg-orange-500 shadow-md px-8 py-3 rounded-xl font-semibold text-white text-lg transition-all duration-300"
-      >
-        Let's Collaborate!
-      </button>
+      
+<motion.button
+  onClick={handleClick}
+  whileHover={{ rotate: [0, -5, 5, -5, 0], transition: { duration: 0.6 } }}
+  whileTap={{ scale: 0.95 }}
+  className="bg-orange-400 cursor-pointer shadow-md px-8 py-3 rounded-xl font-semibold text-white text-lg"
+>
+  Let's Collaborate!
+</motion.button>
 
       {/* Optional background shape (like your image's wave) */}
       {/* <svg

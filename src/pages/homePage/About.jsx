@@ -15,7 +15,7 @@ const About = () => {
     <section className="relative flex md:flex-row flex-col-reverse justify-between items-center bg-white px-6 md:px-20 py-16">
       {/* Image Section */}
       <motion.div
-        className="relative w-full md:w-1/2"
+        className="relative w-full md:w-1/2  h-full px-20"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
@@ -23,7 +23,7 @@ const About = () => {
         <img
           src={office3}
           alt="Symence IT Office"
-          className="mx-auto rounded-2xl w-full max-w-md"
+          className="mx-auto rounded-2xl w-full "
         />
         {/* Play Button */}
         <div
@@ -95,7 +95,7 @@ const About = () => {
         >
           <div className="relative bg-white shadow-xl p-6 rounded-lg w-[90%] md:w-[700px] h-96">
             <button
-              className="top-3 right-4 absolute font-bold text-gray-500 hover:text-gray-700 text-xl"
+              className="top-3 cursor-pointer right-4 absolute font-bold text-gray-500 hover:text-gray-700 text-xl"
               onClick={() => setShowModal(false)}
             >
               ✖

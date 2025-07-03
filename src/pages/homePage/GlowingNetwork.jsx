@@ -9,7 +9,8 @@ import {
   ArrowBigRight,
 } from "lucide-react";
 import { div } from "framer-motion/client";
-
+import Lotties from "../../components/Lotties";
+import rotate from "../../assets/rotatingLottie.json"
 const services = [
   {
     label: "Web Development",
@@ -49,12 +50,12 @@ const GlowingNetwork = () => {
         className="relative flex justify-center items-center bg-base-50 mx-auto rounded-xl w-full h-[500px] sm:h-[600px] overflow-hidden"
       >
         {/* Glowing Circular Background */}
-        <div className="z-0 absolute shadow-inner blur-[2px] border border-purple-500/80 rounded-full w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] animate-pulse"></div>
+        <div className="z-0 absolute shadow-inner p-1 blur-[2px] border border-purple-800 rounded-full w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] animate-pulse"></div>
 
         {/* Multiple rings */}
-        <div className="z-0 absolute blur-sm border border-purple-400/60 rounded-full w-[300px] h-[300px]" />
-        <div className="z-0 absolute blur-sm border border-purple-400/40 rounded-full w-[400px] h-[400px] animate-pulse" />
-        <div className="z-0 absolute blur-sm border border-purple-400/30 rounded-full w-[500px] h-[500px]" />
+        <div className="z-0 absolute blur-sm border border-purple-400/80 rounded-full w-[300px] h-[300px]" />
+        <div className="z-0 absolute blur-sm border border-purple-400/60 rounded-full w-[400px] h-[400px] animate-pulse" />
+        <div className="z-0 absolute blur-sm border border-purple-400/50 rounded-full w-[500px] h-[500px]" />
 
         {/* Center Company Name */}
         <motion.div
@@ -64,7 +65,12 @@ const GlowingNetwork = () => {
           className="z-10 absolute bg-gradient-to-r from-indigo-500 to-purple-600 shadow-2xl px-8 py-5 rounded-full font-bold text-white text-xl sm:text-2xl text-center"
         >
           Symence IT
+         
+          
         </motion.div>
+         <div className="">
+            <Lotties lottie={rotate}/>
+          </div>
 
         {/* Service Nodes */}
         {services.map((service, idx) => {
