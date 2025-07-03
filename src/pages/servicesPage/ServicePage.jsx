@@ -23,7 +23,7 @@ const ServicePage = () => {
           autoplay
                 loop          
                src={servicesLottie}
-                 style={{ height: "400px", width: "100%" }}
+                 style={{ height: "200px", width: "100%" }}
                />
       </div>
 

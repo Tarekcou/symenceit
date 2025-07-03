@@ -15,7 +15,7 @@ const ProductPage = () => {
   return (
     <div className="flex flex-col items-center bg-amber-50 px-4 py-12 pt-36 min-h-screen">
       {/* Heading Section */}
-      <div className="mb-10 w-full text-center">
+      <div className="mb-10 space-y-4 w-full text-center">
         <h1 className="font-bold text-gray-800 text-4xl md:text-5xl">
           Every Step Tells Our Story
         </h1>
